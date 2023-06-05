@@ -1,0 +1,19 @@
+@media (min-width: 1025px) {
+    .h-custom-2 {
+      height: 50%;
+      }
+    }
+
+#login-form{
+  margin:auto;
+  margin-top:15vh;
+}
+
+#login-logo{
+  margin-left:15vw;
+}
+
+#login{
+  margin-left: 15vw;
+  font-weight: bolder;
+}
