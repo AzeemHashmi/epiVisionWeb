@@ -14,11 +14,13 @@ import "./App.css";
 import Login from "./Pages/Login";
 import Dashboard from "./Pages/Dashboard";
 import VerifyAccount from "./Pages/VerifyAccount";
+import Stream from "./Pages/Stream";
+import Seizure from "./Pages/Seizure";
 
 const App = () => {
   const [tokenVerify, setTokenVerify] = useState();
   const navigate = useNavigate();
-  const location = useLocation()
+  const location = useLocation();
 
   const authWrapper = () => {
     const token = localStorage.getItem("epivision_auth");
@@ -35,8 +37,6 @@ const App = () => {
   };
 
   useEffect(() => {
-
-
     authWrapper();
   }, [location]);
 
@@ -45,25 +45,49 @@ const App = () => {
       <Route
         path="/"
         Component={() => {
-        return  tokenVerify?.access  ? <Navigate to={"/dashboard/stream"} /> : <Login />;
+          return tokenVerify?.access ? (
+            <Navigate to={"/dashboard/stream"} />
+          ) : (
+            <Login />
+          );
         }}
       />
       <Route
         path="/activate/:uid/:token"
         Component={() => {
-        return  tokenVerify?.access  ? <Navigate to={"/dashboard/stream"} /> : <VerifyAccount />;
+          return tokenVerify?.access ? (
+            <Navigate to={"/dashboard/stream"} />
+          ) : (
+            <VerifyAccount />
+          );
         }}
       />
       <Route
         path="/login"
         Component={() => {
-          return tokenVerify?.access ? <Navigate to={"/dashboard/stream"} /> : <Login />;
+          return tokenVerify?.access ? (
+            <Navigate to={"/dashboard/stream"} />
+          ) : (
+            <Login />
+          );
         }}
       />
       <Route
         path="/dashboard/*"
         Component={() => {
-          return  tokenVerify?.access ? <Dashboard /> : <Navigate to={"/"} />;
+          return tokenVerify?.access ? <Dashboard /> : <Navigate to={"/"} />;
+        }}
+      />
+      
+      <Route
+        path="dashboard/seizurerecord"
+        Component={() => {
+          return tokenVerify?.access ? (
+            <Navigate to={"/Dashboard/Seizure"} />
+            // <Seizure/>
+          ) : (
+            <Login />
+          );
         }}
       />
     </Routes>

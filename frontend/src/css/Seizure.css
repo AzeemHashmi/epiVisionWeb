@@ -1,0 +1,29 @@
+.input{
+    background-color: white;
+    padding: 10px;
+    font-size: 20px;
+    margin: 3%;
+    border: 2px solid black;
+    border-radius: 10px ;
+    width: 30%;
+}
+.input-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.table{
+    width: 80%;
+}
+
+.table-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+  th {
+    font-size: 20px;
+  }
+  

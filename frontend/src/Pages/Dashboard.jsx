@@ -5,6 +5,7 @@ import { FiSettings } from "react-icons/fi";
 import { Navbarr, Navbar, Footer, Sidebar, ThemeSettings } from "../components";
 import Stream from './Stream';
 import Orders from './Orders';
+import Seizure from './Seizure'
 import "../css/Dashboard.css";
 
 import { useStateContext } from "../contexts/ContextProvider";
@@ -56,7 +57,8 @@ const Dashboard = () => {
               <Routes>
                 {/* <Route path="/stream" element={<Stream />} /> */}
                 <Route path="/stream" element={<Stream/>} />
-                 <Route path="/orders" element={<Orders />} />
+                <Route path="/seizure" element={<Seizure/>} />
+                <Route path="/orders" element={<Orders />} />
               </Routes>
             </div>
             {/* <Footer /> */}
