@@ -93,25 +93,37 @@ DATABASES = {
 
     # postgres://tsdbadmin@ccn9whfba1.xip75akr7w.tsdb.cloud.timescale.com:32945/tsdb?sslmode=require
 
-    # 'default': {
-    #     'ENGINE': 'timescale.db.backends.postgresql',
-    #     'NAME': 'tsdb',
-    #     'USER': 'tsdbadmin',
-    #     'PASSWORD': 'shari1234567',
-    #     'HOST': 'ccn9whfba1.xip75akr7w.tsdb.cloud.timescale.com',
-    #     'PORT': '32945'
-    # }
-
-    # postgres://tsdbadmin@bgwp7291fd.nz9figc7tt.tsdb.cloud.timescale.com:38694/tsdb?sslmode=require
-
     'default': {
         'ENGINE': 'timescale.db.backends.postgresql',
         'NAME': 'tsdb',
         'USER': 'tsdbadmin',
-        'PASSWORD': 's5g3816w5vpd2h1c',
-        'HOST': 'bgwp7291fd.nz9figc7tt.tsdb.cloud.timescale.com',
-        'PORT': '38694'
+        'PASSWORD': 'shari1234567',
+        'HOST': 'ccn9whfba1.xip75akr7w.tsdb.cloud.timescale.com',
+        'PORT': '32945'
     }
+
+    # postgres://tsdbadmin@bgwp7291fd.nz9figc7tt.tsdb.cloud.timescale.com:38694/tsdb?sslmode=require
+
+    # 'default': {
+    #     'ENGINE': 'timescale.db.backends.postgresql',
+    #     'NAME': 'tsdb',
+    #     'USER': 'tsdbadmin',
+    #     'PASSWORD': 's5g3816w5vpd2h1c',
+    #     'HOST': 'bgwp7291fd.nz9figc7tt.tsdb.cloud.timescale.com',
+    #     'PORT': '38694'
+    # }
+
+    # 'default': {
+    #         'ENGINE': 'sql_server.pyodbc',
+    #         'HOST': '(LocalDB)\ProjectLocalDB',
+    #         'PORT': '3306',
+    #         'NAME': 'Epi_Vision_DB',
+    #         'USER': 'Muhammad Ali Murtaza',
+    #         'PASSWORD': '22033',
+    #         'OPTIONS': {
+    #             'driver': 'ODBC Driver 17 for SQL Server',
+    #         },
+    # },
 }
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
