@@ -43,7 +43,12 @@ INSTALLED_APPS = [
     'corsheaders',
     'djoser',
     'accounts',
-    'patient'
+    'activities',
+    'activity_logs',
+    'caretaker',
+    'lookup',
+    'patients',
+
 ]
 
 MIDDLEWARE = [
@@ -91,16 +96,29 @@ WSGI_APPLICATION = 'epivision.wsgi.application'
 
 DATABASES = {
 
+    'default': {
+        # 'ENGINE': 'sql_server.pyodbc',
+        'ENGINE': 'mssql',
+        'HOST': '65.108.97.18',
+        # 'PORT': '',
+        'NAME': 'epivisiondb',
+        'USER': 'epivisionuser',
+        'PASSWORD': '3R6nhb87#',
+        'OPTIONS': {
+            'driver': 'ODBC Driver 17 for SQL Server',
+            },
+    }
+
     # postgres://tsdbadmin@ccn9whfba1.xip75akr7w.tsdb.cloud.timescale.com:32945/tsdb?sslmode=require
 
-    'default': {
-        'ENGINE': 'timescale.db.backends.postgresql',
-        'NAME': 'tsdb',
-        'USER': 'tsdbadmin',
-        'PASSWORD': 'shari1234567',
-        'HOST': 'ccn9whfba1.xip75akr7w.tsdb.cloud.timescale.com',
-        'PORT': '32945'
-    }
+    # 'default': {
+    #     'ENGINE': 'timescale.db.backends.postgresql',
+    #     'NAME': 'tsdb',
+    #     'USER': 'tsdbadmin',
+    #     'PASSWORD': 'shari1234567',
+    #     'HOST': 'ccn9whfba1.xip75akr7w.tsdb.cloud.timescale.com',
+    #     'PORT': '32945'
+    # }
 
     # postgres://tsdbadmin@bgwp7291fd.nz9figc7tt.tsdb.cloud.timescale.com:38694/tsdb?sslmode=require
 
@@ -220,4 +238,4 @@ DJOSER = {
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-AUTH_USER_MODEL = 'accounts.UserAccount'
+# AUTH_USER_MODEL = 'accounts.UserAccount'
